@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Investigation_Job_1._0___ServerApp</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Remove="Pages\Marketplace.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Pages\Marketplace.cshtml.cs" />
+    </ItemGroup>
+
+</Project>
