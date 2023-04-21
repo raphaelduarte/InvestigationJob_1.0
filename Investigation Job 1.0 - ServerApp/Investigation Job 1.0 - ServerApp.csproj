@@ -15,4 +15,8 @@
       <Compile Remove="Pages\Marketplace.cshtml.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Myvas.Extensions.Configuration.EntityFrameworkCore.UI" Version="2.0.1-alpha-81015" />
+    </ItemGroup>
+
 </Project>

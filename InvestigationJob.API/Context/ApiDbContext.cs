@@ -1,4 +1,5 @@
-﻿using InvestigationJob.API.Entities.Interface;
+﻿/*
+using InvestigationJob.API.Entities.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace InvestigationJob.API.Context;
@@ -18,5 +19,5 @@ public class ApiDbContext : DbContext
         {
             
         }
-} 
-}
+    } 
+*/
