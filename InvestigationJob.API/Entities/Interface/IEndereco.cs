@@ -2,7 +2,7 @@
 
 public interface IEndereco
 {
-    public int Id { get; set; }
+    public Guid IdEndereco { get; set; }
     public string Rua { get; set; }
     public int Numero { get; set; }
     public string Bairro { get; }

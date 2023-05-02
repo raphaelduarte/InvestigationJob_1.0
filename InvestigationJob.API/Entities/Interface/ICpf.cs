@@ -2,6 +2,6 @@
 
 public interface ICpf
 {
-    public int Id { get; set; }
+    public Guid IdCpf { get; set; }
     public int Cpf { get; set; }
 }

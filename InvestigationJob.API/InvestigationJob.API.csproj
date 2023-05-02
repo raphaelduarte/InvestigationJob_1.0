@@ -7,9 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Dapper" Version="2.0.123" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0-preview1.23109.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -21,6 +23,10 @@
 
     <ItemGroup>
       <Compile Remove="Entities\Interface\NomeCompleto.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="DataAcess\" />
     </ItemGroup>
 
 </Project>

@@ -1,9 +1,8 @@
 ﻿namespace InvestigationJob.API.Entities.Interface.Endereco;
 
-public interface IBairro : IBairroCidade
+public interface IBairro
 {
-    public int Id { get; set; }
-    public int IdBairroCidade { get; set; } 
+    public Guid IdBairro { get; set; }
     public string Bairro { get; set; }
-    
+
 }

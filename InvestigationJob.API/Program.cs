@@ -1,25 +1,18 @@
-var builder = WebApplication.CreateBuilder(args);
+using System;
+using Dapper;
+using InvestigationJob.API.Entities.Interface;
+using Microsoft.Data.SqlClient;
+namespace InvestigationJob.DatabaseModel;
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+class InvestigationJob
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    static void Main(string[] args)
+    {
+        const string connectionString = "Server=SQLEXPRESS;Database=Investigation Job;Integrated Security=SSPI";
+
+        using (var connection = new SqlConnection(connectionString))
+        {
+            var usuario = connection.Query<IUsuario>("SELECT [IdUsuario] FROM [IUsuario]");
+        }
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
