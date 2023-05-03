@@ -1,19 +1,25 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using InvestigationJob.API.Entities.Interface;
-namespace InvestigationJob.API.Model;
 
-public class UsuarioModel : IUsuario
+namespace InvestigationJob.API.Entities.Service;
+
+[Table("Usuario")]
+public class Usuario : IUsuario
 {
+    [Key]
+    public Guid IdUsuario { get; }
     private Guid _idNomeCompleto;
     private Guid _idCpf;
     private Guid _idTelefone;
     private Guid _idEndereco;
+    private Guid _idImage;
     private int _idNomeCompleto1;
     private int _idCpf1;
     private int _idTelefone1;
     private int _idEndereco1;
-    public Guid IdUsuario { get; }
-    public Guid _idImage { get; set; }
+    private int _idImage1;
+    
 
     int IUsuario.IdNomeCompleto
     {
@@ -39,7 +45,11 @@ public class UsuarioModel : IUsuario
         set => _idEndereco1 = value;
     }
 
-    public int IdImage { get; set; }
+    int IUsuario.IdImage
+    {
+        get => _idImage1;
+        set => _idImage1 = value;
+    }
 
     Guid INomeCompleto.IdNomeCompleto
     {
@@ -73,6 +83,10 @@ public class UsuarioModel : IUsuario
         set => _idEndereco = value;
     }
 
+    public string Rua { get; set; }
+    public int Numero { get; set; }
+    public string Bairro { get; }
+
     Guid IImage.IdImage
     {
         get => _idImage;
@@ -80,8 +94,4 @@ public class UsuarioModel : IUsuario
     }
 
     public string Image { get; set; }
-
-    public string Rua { get; set; }
-    public int Numero { get; set; }
-    public string Bairro { get; }
 }

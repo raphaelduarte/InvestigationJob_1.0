@@ -25,8 +25,4 @@
       <Compile Remove="Entities\Interface\NomeCompleto.cs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="DataAcess\" />
-    </ItemGroup>
-
 </Project>

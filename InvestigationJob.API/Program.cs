@@ -1,18 +1,22 @@
-using System;
 using Dapper;
+using InvestigationJob.API.Data;
 using InvestigationJob.API.Entities.Interface;
+using InvestigationJob.API.Entities.Service;
 using Microsoft.Data.SqlClient;
-namespace InvestigationJob.DatabaseModel;
+
+namespace InvestigationJob.API;
 
 class InvestigationJob
 {
     static void Main(string[] args)
     {
-        const string connectionString = "Server=SQLEXPRESS;Database=Investigation Job;Integrated Security=SSPI";
-
-        using (var connection = new SqlConnection(connectionString))
+        
+        using (var context = new DataContext())
         {
-            var usuario = connection.Query<IUsuario>("SELECT [IdUsuario] FROM [IUsuario]");
+            var Usuario = new Usuario { Nome = "Raphael", Sobrenome = "Duarte Silva Silveira"};
+            context.Add(Usuario);
+            context.SaveChanges();
+            Console.WriteLine("Foi para o banco");
         }
     }
 }
